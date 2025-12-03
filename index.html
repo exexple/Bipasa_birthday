@@ -622,6 +622,11 @@
   btnShowGift.addEventListener('click', ()=>{
     giftMsg.style.display = 'none';
     giftVideo.style.display = 'block';
+  
+  // STOP MUSIC WHEN VIDEO PLAYS
+    bgm.pause();
+    bgm.currentTime = 0;
+  
     giftVideo.play();
     
     // Request fullscreen (cross-browser)
@@ -650,7 +655,20 @@
       setTimeout(()=> b.remove(), 14000);
     }
   }
+
+    // Resume music when video ends
+  giftVideo.addEventListener('ended', ()=>{
+    bgm.play();
+  });
+
+  // Resume music if user exits fullscreen
+  document.addEventListener('fullscreenchange', ()=>{
+    if(!document.fullscreenElement && giftVideo.style.display === 'block'){
+      bgm.play();
+    }
+  });
 </script>
 </body>
 </html>
+
 
