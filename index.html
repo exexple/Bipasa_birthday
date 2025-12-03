@@ -453,7 +453,7 @@
         </div>
       </div>
       <!-- Hidden fullscreen video -->
-      <video id="giftVideo" style="display:none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: 9999;" controls>
+      <video id="giftVideo" style="display:none; max-width: 96vw; max-height: 90vh; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.35);" controls>
         <source src="YOUR_VIDEO.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -598,7 +598,7 @@
 
   // Decorate 2
   btnDecor2.addEventListener('click', ()=>{
-    decorStep2.classList.remove('hidden');
+     ;
     decorStep2.classList.add('fade-in');
     ribbon2.classList.add('show');
     const decorArea2 = document.getElementById('decorArea2');
@@ -670,5 +670,6 @@
 </script>
 </body>
 </html>
+
 
 
